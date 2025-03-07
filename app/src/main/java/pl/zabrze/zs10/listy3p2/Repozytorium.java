@@ -3,7 +3,7 @@ package pl.zabrze.zs10.listy3p2;
 import java.util.ArrayList;
 
 public class Repozytorium {
-        public Przepis[] wszystkiePrzepisy = new Przepis[]{
+        public static final Przepis[] wszystkiePrzepisy = new Przepis[]{
 
                 new Przepis("sernik",
                         "ciasta",
@@ -31,5 +31,14 @@ public class Repozytorium {
                         "wsypać kako zalać gorącym mlekiem")
         };
 
+public static ArrayList<Przepis> przepisyZKategorii(String kategoria){
+        ArrayList<Przepis> przepisy = new ArrayList<>();
+        for (Przepis przepis:wszystkiePrzepisy) {
+                if(przepis.getKategoria().equals(kategoria)){
+                        przepisy.add(przepis);
+                }
+        }
+        return przepisy;
 
+}
 }
